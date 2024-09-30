@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.26; 
+pragma solidity ^0.8.26;
+// 0x2732a482c9d2aa27a924d5e25893c68558a660945551a6bf51e35cf39dcdb6d7
+// ##### sepolia
+// ✅  [Success]Hash: 0x2732a482c9d2aa27a924d5e25893c68558a660945551a6bf51e35cf39dcdb6d7
+// Contract Address: 0xc68cAC7D69C632F76922f5e3af5aACB076AF930a
+// Block: 6790605
+// Paid: 0.090399464014270925 ETH (766999 gas * 117.861254075 gwei)
+
 
 import {Test} from "forge-std/Test.sol";
 import {Token} from "../src/ERC20Token.sol";
