@@ -6,12 +6,12 @@ import {ERC20Capped} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20C
 import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
 contract Token is ERC20Capped, ERC20Burnable {
-    address payable public owner;
+    address payable public immutable owner;
     uint256 public blockReward;
 
     constructor(uint256 cap, uint256 reward) ERC20("SamKen", "SAM") ERC20Capped(cap * 10 ** 18) {
         owner = payable(msg.sender);
-        _mint(msg.sender, 70000000 * 10 ** 18);
+        _mint(msg.sender, 7000000 * 10 ** 18);
         blockReward = reward * 10 ** 18;
     }
 
@@ -21,7 +21,7 @@ contract Token is ERC20Capped, ERC20Burnable {
     }
 
     function mintMinerReward() external {
-        require(totalSupply() <= cap(), "Token Cap reached");
+        require(totalSupply() < cap(), "Token Cap reached");
         _mint(block.coinbase, blockReward);
     }
 
